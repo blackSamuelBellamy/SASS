@@ -1,0 +1,50 @@
+$primary: #212529; // 
+$warning: #CF649A; //se modifican variables aunque no era requisito
+$subtitle: #AD4E72; // aquí se cream 3
+$letters: #DADCD8;
+$fondo: linear-gradient(45deg, rgba(10, 100, 200, .7), rgba(255, 150, 100, .5));
+
+$theme-colors: (
+  "primary": $primary,
+  "warning": $warning,      // se añanden los cambios y las nuevas variables al objeto Theme
+  "subtitle": $subtitle,
+  "letters": $letters
+);
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Permanent+Marker&family=Smooch&display=swap");
+$font-family-sans-serif: 'Smooch', cursive !default; // se importa fuente como pide el desafío
+
+@import "../bootstrap/scss/bootstrap.scss";
+
+%layout {
+    display: flex;
+    justify-content: center;
+    // se crea el extend
+}
+
+
+.container-fluid {
+    @extend %layout;
+    align-items: center;    // se usa por primera vez el extend
+    height: 100vh;
+    width: 100vw;
+    background: $fondo;
+    
+}
+
+.card {
+    width: 17em;
+    box-shadow: 1px 1px 5px #ccc inset, 4px 8px 30px #FFF , 4px 8px 40px #ccc;
+}
+
+.card-body {
+    @extend %layout;
+    align-items: flex-start;        // se usa por segunda vez
+    flex-direction: column;
+
+    p  { 
+        letter-spacing: 1px;
+        text-align: left;
+    }
+
+  
+}
